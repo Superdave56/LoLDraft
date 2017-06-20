@@ -3,6 +3,6 @@
   phase of League of Legends.
 */
 
-Public Static void main(String args[]) {
+public static void main(String args[]) {
   
 }
