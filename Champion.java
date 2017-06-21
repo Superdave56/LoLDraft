@@ -2,11 +2,10 @@
 
 class Champion {
   private String name;
-  boolean isMeta;
-  String role;
-  String dmg_type;
-  int tier;
-  
+  private boolean isMeta;
+  private String role;
+  private String dmg_type;
+  private String tier;
   // getters and setters for instance variables
   String getName() {
   	return name; 
@@ -21,7 +20,10 @@ class Champion {
   }
   
   void setRole(String aRole) {
-  	role = aRole;
+  	if (aRole == "Mid" || aRole == "Top" || aRole == "Jungle" || aRole == "Bot" ||
+  			aRole == "Support") {
+  		role = aRole;
+  	}
   }
   
   boolean getIsMeta() {
@@ -37,35 +39,50 @@ class Champion {
   }
   
   void setDmg_type(String aDmg_type) {
-  	dmg_type = aDmg_type;
+  	if (aDmg_type == "AP" || aDmg_type == "AD") {
+  		dmg_type = aDmg_type;
+  	}
   }
 
-  int getTier() {
+  String getTier() {
   	return tier; 
   }
   
-  void setTier(int aTier) {
-  	tier = aTier;
+  void setTier(String aTier) {
+  	if (aTier == "S" || aTier == "A" || aTier == "B" || aTier == "C") {
+  		tier = aTier;
+  	}
   }
   
+// Display champion details
   public void pick() {
   	System.out.println("You have selected " + getName() + ".");
   	System.out.println("In Meta: " + getIsMeta());
   	System.out.println("Role: " + getRole());
   	System.out.println("Damage type: " + getDmg_type());
   	System.out.println("Tier: " + getTier());
+  	System.out.println();
   }
 }
 
 class ChampionTestDrive {
 	public static void main (String args[]) {
-	Champion one = new Champion();
-	one.setName("Ahri");
-	one.setIsMeta(true);
-	one.setRole("Mid");
-	one.setDmg_type("AP");
-	one.setTier(1);
+	Champion[] blue = new Champion[5];
+	blue[0] = new Champion();
+	blue[1] = new Champion();
 	
-	one.pick();
+	blue[0].setName("Ahri");
+	blue[0].setIsMeta(true);
+	blue[0].setRole("Mid");
+	blue[0].setDmg_type("AP");
+	blue[0].setTier("A");
+	blue[0].pick();
+	
+	blue[1].setName("Jinx");
+	blue[1].setIsMeta(false);
+	blue[1].setRole("Bot");
+	blue[1].setDmg_type("AD");
+	blue[1].setTier("B");
+	blue[1].pick();
 	}
 }
