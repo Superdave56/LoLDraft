@@ -3,10 +3,14 @@
 class Champion {
   private String name;
   private boolean isMeta;
+  private String tier;
   private String role;
   private String dmg_type;
-  private String tier;
-  // getters and setters for instance variables
+  private String[] tier_list = {"S","A","B","C"};
+  private String[] role_list = {"Top","Jungle","Mid","Bot","Support"};
+  private String[] dmg_type_list = {"AD","AP"};
+  
+// Getters and setters for instance variables
   String getName() {
   	return name; 
   }
@@ -20,10 +24,12 @@ class Champion {
   }
   
   void setRole(String aRole) {
-  	if (aRole == "Mid" || aRole == "Top" || aRole == "Jungle" || aRole == "Bot" ||
-  			aRole == "Support") {
-  		role = aRole;
-  	}
+	for(String cell : role_list) {
+		if (aRole == cell) {
+			role = aRole;
+			break;
+		}
+	}
   }
   
   boolean getIsMeta() {
@@ -39,9 +45,13 @@ class Champion {
   }
   
   void setDmg_type(String aDmg_type) {
-  	if (aDmg_type == "AP" || aDmg_type == "AD") {
-  		dmg_type = aDmg_type;
-  	}
+	for(String cell : dmg_type_list) {
+		if (aDmg_type == cell) {
+			dmg_type = aDmg_type;
+			break;
+		}
+	}
+	
   }
 
   String getTier() {
@@ -49,9 +59,12 @@ class Champion {
   }
   
   void setTier(String aTier) {
-  	if (aTier == "S" || aTier == "A" || aTier == "B" || aTier == "C") {
-  		tier = aTier;
-  	}
+	for(String cell : tier_list) {
+		if (aTier == cell) {
+			tier = aTier;
+			break;
+		}
+	}
   }
   
 // Display champion details
