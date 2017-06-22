@@ -1,4 +1,5 @@
 // This program selects a champion
+// New change
 
 class Champion {
   private String name;
