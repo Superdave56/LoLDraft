@@ -1,8 +1,9 @@
-// This program selects a champion
+// This class selects a champion
 
-class Champion {
+public class Champion {
   private String name;
   private boolean isMeta;
+  private boolean isCarry;
   private String tier;
   private String role;
   private String dmg_type;
@@ -19,6 +20,22 @@ class Champion {
   	name = aName;
   }
   
+  boolean getIsMeta() {
+  	return isMeta; 
+  }
+  
+  void setIsMeta(boolean aIsMeta) {
+  	isMeta = aIsMeta;
+  }
+  
+  boolean getIsCarry() {
+  	return isCarry; 
+  }
+  
+  void setIsCarry(boolean aIsCarry) {
+  	isCarry = aIsCarry;
+  }
+  
   String getRole() {
   	return role; 
   }
@@ -30,14 +47,6 @@ class Champion {
 			break;
 		}
 	}
-  }
-  
-  boolean getIsMeta() {
-  	return isMeta; 
-  }
-  
-  void setIsMeta(boolean aIsMeta) {
-  	isMeta = aIsMeta;
   }
   
   String getDmg_type() {
@@ -70,32 +79,11 @@ class Champion {
 // Display champion details
   public void pick() {
   	System.out.println("You have selected " + getName() + ".");
+  	System.out.println("Is a carry: " + getIsCarry());
   	System.out.println("In Meta: " + getIsMeta());
   	System.out.println("Role: " + getRole());
   	System.out.println("Damage type: " + getDmg_type());
   	System.out.println("Tier: " + getTier());
   	System.out.println();
   }
-}
-
-class ChampionTestDrive {
-	public static void main (String args[]) {
-	Champion[] blue = new Champion[5];
-	blue[0] = new Champion();
-	blue[1] = new Champion();
-	
-	blue[0].setName("Ahri");
-	blue[0].setIsMeta(true);
-	blue[0].setRole("Mid");
-	blue[0].setDmg_type("AP");
-	blue[0].setTier("A");
-	blue[0].pick();
-	
-	blue[1].setName("Jinx");
-	blue[1].setIsMeta(false);
-	blue[1].setRole("Bot");
-	blue[1].setDmg_type("AD");
-	blue[1].setTier("B");
-	blue[1].pick();
-	}
 }
