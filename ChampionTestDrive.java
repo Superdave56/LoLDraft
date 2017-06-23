@@ -3,7 +3,7 @@ public class ChampionTestDrive {
 		int numOfAD = 0;
 		int numOfAP = 0;
 		
-		Champion[] blue = new Champion[5];
+		Champion[] blue = new Champion[2];
 		blue[0] = new Champion();
 		blue[1] = new Champion();
 		
@@ -24,7 +24,7 @@ public class ChampionTestDrive {
 		blue[1].pick();
 		
 		// get number of AD and AP champions
-		for (int i=0; i <= 1; i++) {
+		for (int i=0; i < blue.length; i++) {
 			if (blue[i].getIsCarry() == false) {
 				continue;
 			}

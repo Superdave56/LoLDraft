@@ -2,3 +2,5 @@ Champion.java notes
 
 Add instance variable for whether champion is utility or carry.
 Update CompDmgType calculation to exclude utility type champions.
+Incorporate red side
+Incorporate champion selection from command line
